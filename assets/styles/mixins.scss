@@ -1,0 +1,9 @@
+@mixin media-area($key, $areas: $breakpoint-areas) {
+  @if map-has-key($areas, $key) {
+    @media #{map-get($areas, $key)} {
+      @content;
+    }
+  } @else {
+    @warn "#{$key} doesn't exist in the map.";
+  }
+}

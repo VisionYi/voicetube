@@ -1,0 +1,52 @@
+// main color
+$primary: #4283E4;
+$secondary: #37C597;
+
+// neutral color
+$gray-300: #D8D8D8;
+$gray-500: #787878;
+$gray-800: #212B36;
+
+// base style
+$base-color: $gray-800;
+$base-font-size: 14px;
+$base-font-weight: normal;
+$base-line-hight: 1.5;
+$base-letter-spacing: 0;
+$base-background-color: #ffffff;
+
+// breakpoints
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+$breakpoint-areas: (
+  md-down: '(max-width: #{$breakpoint-md - 0.02px})',
+  lg-down: '(max-width: #{$breakpoint-lg - 0.02px})',
+  xl-down: '(max-width: #{$breakpoint-xl - 0.02px})',
+
+  md: '(min-width: #{$breakpoint-md})',
+  lg: '(min-width: #{$breakpoint-lg})',
+  xl: '(min-width: #{$breakpoint-xl})',
+);
+
+$breakpoint-areas-map: (
+  md: '(min-width: #{$breakpoint-md})',
+  lg: '(min-width: #{$breakpoint-lg})',
+  xl: '(min-width: #{$breakpoint-xl})',
+);
+
+$grid-col-width-map: (
+  12: 100%,
+  6: 50%,
+  4: 33.333%,
+  3: 25%,
+);
+
+$grid-gap-map: (
+  2: 8px,
+  3: 12px,
+  4: 16px,
+  5: 20px,
+  6: 24px,
+);

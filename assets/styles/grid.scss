@@ -1,0 +1,61 @@
+.g-row {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.g-col,
+%col {
+  position: relative;
+  max-width: 100%;
+  flex: 0 0 auto;
+}
+
+/**
+ * column
+ * g-col-{size}
+ */
+.g-row > [class*=g-col] {
+  @extend %col;
+}
+
+@each $size, $width in $grid-col-width-map {
+  .g-col-#{$size} {
+    width: $width;
+  }
+}
+
+.g-col-flexible {
+  flex: 1 1 auto !important;
+  width: 0;
+}
+
+/**
+ * gap
+ * g-gap-{size}
+ */
+@each $size, $value in $grid-gap-map {
+  .g-gap-#{$size} {
+    margin: -($value / 2);
+
+    > [class*=g-col] {
+      padding: ($value / 2);
+    }
+  }
+}
+
+/* RWD
+-------------------------- */
+@each $breakpoint, $area in $breakpoint-areas-map {
+  @media #{$area} {
+    /**
+     * RWD column
+     * g-col-{breakpoint}-{size}
+     */
+     @each $size, $width in $grid-col-width-map {
+      .g-col-#{$breakpoint}-#{$size} {
+        flex: 0 0 auto !important;
+        width: $width;
+      }
+    }
+  }
+}

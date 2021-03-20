@@ -1,0 +1,25 @@
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Tahoma, Arial, "PingFang TC", "Segoe UI", "Hiragino Sans TC", "Heiti TC", "Microsoft YaHei", "wenquanyi micro hei", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: $base-font-size;
+  font-weight: $base-font-weight;
+  line-height: $base-line-hight;
+  letter-spacing: $base-letter-spacing;
+  color: $base-color;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: $base-background-color;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
