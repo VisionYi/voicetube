@@ -17,7 +17,7 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: process.env.NUXT_ENV_PUBLIC_PATH + 'favicon.ico' },
       { rel: 'preconnect', href: 'https://cdn.rawgit.com' },
       { rel: 'stylesheet', type: 'text/css', href: 'https://cdn.rawgit.com/filipelinhares/ress/master/dist/ress.min.css' }
     ]
@@ -64,6 +64,10 @@ export default {
   generate: {
     // auto build 404 page for `generate mode`
     fallback: true
+  },
+
+  router: {
+    base: process.env.NUXT_ENV_PUBLIC_PATH || '/',
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
