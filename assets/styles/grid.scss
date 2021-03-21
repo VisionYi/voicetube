@@ -59,3 +59,35 @@
     }
   }
 }
+
+/**
+ * align
+ * align-{position}
+ */
+.g-align-top {
+  align-items: flex-start;
+}
+
+.g-align-middle {
+  align-items: center;
+}
+
+.g-align-bottom {
+  align-items: flex-end;
+}
+
+.g-align-center {
+  justify-content: center;
+}
+
+.g-align-right {
+  justify-content: flex-end;
+}
+
+.g-align-left {
+  justify-content: flex-end;
+}
+
+.g-align-space-between {
+  justify-content: space-between;
+}
