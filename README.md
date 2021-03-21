@@ -1,4 +1,17 @@
-# voicetube
+# VoiceTube
+VoiceTube 作業
+- [Dome Page](https://https://voice-tube.netlify.app/)
+- [Storybook Page](https://video-platform.netlify.app/_storybook)
+
+## Tech Stack
+- Nuxt.js v2
+- Deploy on Netlify
+
+## Start Development
+create a '.env' files for environment variable, default content:
+```
+NUXT_ENV_PUBLIC_PATH = /
+```
 
 ## Build Setup
 
@@ -15,6 +28,8 @@ $ npm run start
 
 # generate static project
 $ npm run generate
-```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+# storybook
+$ npm run storybook
+$ npm run build-storybook
+```

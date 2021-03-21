@@ -56,7 +56,10 @@
           :lang="video.langText"
         />
       </div>
-      <div v-if="filter(videos, {sortType: selectedSortType, drationType: selectedDrationType, dateRange }).length === 0" class="empty">
+      <div v-if="isLoading" class="only-text">
+        Loading...
+      </div>
+      <div v-else-if="filter(videos, {sortType: selectedSortType, drationType: selectedDrationType, dateRange }).length === 0" class="only-text">
         沒有篩選結果
       </div>
     </div>
@@ -141,10 +144,12 @@ export default {
       selectedSortType: SORT_TYPE.publishTime,
       selectedDrationType: DURATION_TYPE.unlimited,
       disableDateRange: true,
-      isLaoding: false,
+      isLoading: false,
     }
   },
   async fetch () {
+    this.isLoading = true
+
     const { data } = await this.$api.getVideoList()
     this.videos = data.map((item) => {
       const [hh, mm, ss] = [
@@ -161,6 +166,7 @@ export default {
         langText: item.captions[0] ? CAPTION[item.captions[0]] : '',
       }
     })
+    this.isLoading = false
   },
   methods: {
     onChangeDisableDateRange ($event) {
@@ -264,7 +270,7 @@ export default {
   }
 }
 
-.empty {
+.only-text {
   width: 100%;
   font-weight: bold;
   margin: 20px;
